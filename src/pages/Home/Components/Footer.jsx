@@ -14,7 +14,7 @@ const Footer = () => {
     companyName: "Gimble",
     logo: "assets/img/logo.png",
     description:
-      "We offer Modern IT solutions for growing your business considering your specific needs. Trust, Quality &amp; Convinience is our way we work and design the solution @gimble.co.in.",
+      "We offer Modern IT solutions for growing your business considering your specific needs. Trust, Quality & Convinience is our way we work and design the solution @gimble.co.in.",
     socialLinks: [
       {
         label: "facebook",

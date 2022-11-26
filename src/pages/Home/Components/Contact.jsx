@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useRef } from "react";
 import "../assets/css/style.css";
 import "../assets/vendor/aos/aos.css";
 import "../assets/vendor/bootstrap-icons/bootstrap-icons.css";
@@ -9,6 +10,31 @@ import "../assets/vendor/swiper/swiper-bundle.min.css";
 import "../style.css";
 
 const Contact = () => {
+  const email = useRef();
+  const name = useRef();
+  const subject = useRef();
+  const body = useRef();
+
+  const submitHandler = async(e) => {
+    e.preventDefault();
+    const userEmail = {
+      name : name.current.value,
+      email : email.current.value,
+      subject : subject.current.value,
+      body : body.current.value,
+      source : 'Gimble',
+    }
+    try {
+      name.current.value = null;
+      email.current.value = null;
+      subject.current.value = null;
+      body.current.value = null;
+      await axios.post("https://my-apps-email-service.herokuapp.com/api/email", userEmail);
+   } catch (err) {
+      console.log(err);
+   }
+ }
+
   return (
     <>
       <section id="contact" className="contact section-space">
@@ -68,9 +94,9 @@ const Contact = () => {
             </div>
             <div className="col-lg-6">
               <form
-                action="forms/contact.php"
                 method="post"
                 className="php-email-form"
+                onSubmit={submitHandler}
               >
                 <div className="row">
                   <div className="col form-group">
@@ -78,6 +104,7 @@ const Contact = () => {
                       type="text"
                       name="name"
                       className="form-control"
+                      ref={name}
                       id="name"
                       placeholder="Your Name"
                       required
@@ -88,6 +115,7 @@ const Contact = () => {
                       type="email"
                       className="form-control"
                       name="email"
+                      ref={email}
                       id="email"
                       placeholder="Your Email"
                       required
@@ -100,6 +128,7 @@ const Contact = () => {
                     className="form-control"
                     name="subject"
                     id="subject"
+                    ref={subject}
                     placeholder="Subject"
                     required
                   />
@@ -109,6 +138,7 @@ const Contact = () => {
                     className="form-control"
                     name="message"
                     rows={5}
+                    ref={body}
                     placeholder="Message"
                     required
                     defaultValue={""}
