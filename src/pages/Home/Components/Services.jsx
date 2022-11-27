@@ -13,7 +13,7 @@ const Services = () => {
     {
       heading: "Websites",
       description:
-        "We ensure that our client’s website and applicaition is responsive on every device, so that no single customer is lost. Our responsive website responds to the user’s behavior and environment based on screen size, platform, &amp; orientation.",
+        "We ensure that our client’s website and applicaition is responsive on every device, so that no single customer is lost. Our responsive website responds to the user’s behavior and environment based on screen size, platform, & orientation.",
       colorOnHover: 'blue',
     },
     {
