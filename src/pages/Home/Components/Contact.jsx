@@ -62,9 +62,7 @@ const Contact = () => {
                     <i className="bi bi-telephone" />
                     <h3>Call Us</h3>
                     <p>
-                      +91 96694 30311
-                      <br />
-                      +91 82991 65446
+                      +91 91980 73027
                     </p>
                   </div>
                 </div>

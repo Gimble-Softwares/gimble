@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../assets/css/style.css";
 import "../assets/vendor/aos/aos.css";
 import "../assets/vendor/bootstrap-icons/bootstrap-icons.css";
@@ -10,6 +10,12 @@ import "../assets/vendor/swiper/swiper-bundle.min.css";
 import "../style.css";
 
 const Header = () => {
+  const location = useLocation();  
+
+  const isActive = (pathname) => {
+    return location.pathname === pathname ? " active" : "";
+  }
+  
   return (
     <>
       {/* ======= Header ======= */}
@@ -20,39 +26,36 @@ const Header = () => {
               Gimble<span>.</span>
             </Link>
           </h1>
-          {/* Uncomment below if you prefer to use an image logo */}
-          {/* <Link to="/" class="logo"><img src="assets/img/logo.png" alt=""></Link>*/}
           <nav id="navbar" className="navbar">
             <ul>
               <li>
-                <Link className="nav-link scrollto active" to="/">
+                <Link className={"nav-link scrollto" + isActive('/')} to="/">
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="nav-link scrollto" to="/about">
+                <Link className={"nav-link scrollto" + isActive('/about')} to="/about">
                   About
                 </Link>
               </li>
               <li>
-                <Link className="nav-link scrollto" to="/services">
+                <Link className={"nav-link scrollto" + isActive('/services')} to="/services">
                   Services
                 </Link>
               </li>
               <li>
-                <Link className="nav-link scrollto " to="/portfolio">
+                <Link className={"nav-link scrollto" + isActive('/portfolio')} to="/portfolio">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link className="nav-link scrollto" to="/contact">
+                <Link className={"nav-link scrollto" + isActive('/contact')} to="/contact">
                   Contact
                 </Link>
               </li>
             </ul>
             <i className="bi bi-list mobile-nav-toggle" />
           </nav>
-          {/* .navbar */}
         </div>
       </header>
     </>
