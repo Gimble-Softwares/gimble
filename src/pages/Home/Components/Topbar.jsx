@@ -39,7 +39,7 @@ const Topbar = () => {
               <Link to="mailto:contact@gimble.co.in">contact@gimble.co.in</Link>
             </i>
             <i className="bi bi-phone d-flex align-items-center ms-4">
-              <span>+91 96694 30311</span>
+              <span>+91 91980 73027</span>
             </i>
           </div>
           <div className="social-links d-none d-md-flex align-items-center">

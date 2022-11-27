@@ -92,7 +92,7 @@ const Footer = () => {
       state: "Telangana",
       country: "India",
     },
-    phone: "9669430311",
+    phone: "+91 91980 73027",
     email: "contact@gimble.co.in",
   };
   
